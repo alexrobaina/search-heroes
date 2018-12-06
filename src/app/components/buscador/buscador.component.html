@@ -1,0 +1,25 @@
+<div class="container main-container">
+    <div class="row">
+        <h1 class="about-title animated fadeIn fast">Buscador <small class="casas"> {{ termino }}</small></h1>
+    </div>
+
+    <div class="container animated fadeIn fast" *ngIf="heroes.length == 0">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-info" role="alert">
+                    No existe resultados con el término: {{ termino }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="card-columns">
+
+            <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroes"></app-heroe-tarjeta>
+
+        </div>
+    </div>
+</div>
